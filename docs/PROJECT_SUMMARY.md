@@ -93,11 +93,14 @@ NinAI/
 │
 ├── public/                       # Static assets
 │
-├── API.md                        # API documentation
-├── FEATURES.md                   # Technical specs
-├── QUICKSTART.md                 # Quick start guide
-├── README.md                     # Main documentation
-├── docker-compose.yml            # ChromaDB container
+├── docs/                         # Documentation
+│   ├── API.md                    # API documentation
+│   ├── FEATURES.md               # Technical specs
+│   ├── PROJECT_SUMMARY.md        # Project overview
+│   ├── QUICKSTART.md             # Quick start guide
+│   └── README.md                 # Main documentation
+│
+├── docker-compose.yml            # Docker services configuration
 ├── .env.example                  # Environment template
 ├── next.config.mjs               # Next.js config
 ├── package.json                  # Dependencies

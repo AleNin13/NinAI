@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   chromadb:
     image: chromadb/chroma:latest
@@ -12,6 +10,25 @@ services:
       - ANONYMIZED_TELEMETRY=FALSE
     restart: unless-stopped
 
-  # Note: Ollama needs to be installed and run on the host machine
-  # as it requires direct GPU access
-  # Run: ollama serve
+  ollama:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    restart: unless-stopped
+    # Uncomment below for GPU support (NVIDIA)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+
+volumes:
+  ollama_data:

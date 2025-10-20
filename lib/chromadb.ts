@@ -1,5 +1,3 @@
-// ...existing code...
-
 import { ChromaClient } from 'chromadb';
 
 // Assuming these are imported or defined elsewhere (e.g., from environment variables)
@@ -55,9 +53,6 @@ export async function getOrCreateCollection(name: string) {
   }
 }
 
-// ...existing code...
-
-// ...existing code...
 
 export async function addDocuments(
   documents: string[],

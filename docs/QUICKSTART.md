@@ -62,6 +62,20 @@ CHROMADB_URL=http://localhost:8000
 
 ### 3. Start Services
 
+**Option A - Using Docker Compose (Recommended):**
+```bash
+# Build and start all services (ChromaDB + Ollama with models)
+docker-compose up -d --build
+
+# First time: Wait for models to download (~3.5GB total)
+# Check progress with:
+docker-compose logs -f ollama
+
+# Once you see "Models ready!", the system is ready to use!
+```
+
+**Option B - Manual Installation:**
+
 **Terminal 1 - Ollama:**
 ```bash
 # Usually starts automatically after installation

@@ -1,0 +1,19 @@
+{
+  "models": [
+    {
+      "name": "llama3.2",
+      "description": "Main chat model for conversations",
+      "size": "~2GB"
+    },
+    {
+      "name": "nomic-embed-text",
+      "description": "Text embedding model for document processing",
+      "size": "~274MB"
+    },
+    {
+      "name": "codellama:7b",
+      "description": "Code generation and analysis model (optional)",
+      "size": "~4GB"
+    }
+  ]
+}
