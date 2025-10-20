@@ -1,0 +1,16 @@
+FROM ollama/ollama:latest
+
+# Install jq for JSON parsing
+RUN apt-get update && apt-get install -y jq && rm -rf /var/lib/apt/lists/*
+
+# Set environment variables
+ENV OLLAMA_HOST=0.0.0.0
+
+# Copy configuration files
+COPY docker/config/models.json /config/models.json
+COPY docker/config/ollama-entrypoint.sh /usr/local/bin/ollama-entrypoint.sh
+RUN chmod +x /usr/local/bin/ollama-entrypoint.sh
+
+EXPOSE 11434
+
+ENTRYPOINT ["/usr/local/bin/ollama-entrypoint.sh"]

@@ -137,3 +137,9 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# ChromaDB data
+chroma_data/
+
+# Uploaded files
+uploads/
